@@ -6,10 +6,13 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #222;
+
+    background: #202020;
+
     min-height: 100vh;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -20,13 +23,19 @@ body {
     text-align: center;
 }
 
-.title {
+h1 {
     color: white;
+
     margin-bottom: 20px;
-    font-size: 32px;
 }
 
-.board {
+
+/* =========================
+   PAPAN LUDO
+========================= */
+
+.ludo-board {
+
     width: 600px;
     height: 600px;
 
@@ -34,45 +43,72 @@ body {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns:
+        2fr 1fr 2fr;
+
+    grid-template-rows:
+        2fr 1fr 2fr;
 
     border: 8px solid #111;
+
 }
 
-/* Rumah pemain */
 
-.home {
+/* =========================
+   RUMAH
+========================= */
+
+.house {
+
     display: flex;
+
+    flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     border: 3px solid #111;
 
     position: relative;
+
 }
 
-.red {
+.red-house {
     background: #ef4444;
 }
 
-.green {
+.green-house {
     background: #22c55e;
 }
 
-.yellow {
+.yellow-house {
     background: #facc15;
 }
 
-.blue {
+.blue-house {
     background: #3b82f6;
 }
 
-/* Lingkaran tempat bidak */
 
-.tokens {
-    width: 150px;
-    height: 150px;
+.house-title {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =========================
+   TEMPAT BIDAK
+========================= */
+
+.pieces {
+
+    width: 130px;
+
+    height: 130px;
 
     background: white;
 
@@ -83,99 +119,211 @@ body {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
+
     grid-template-rows: 1fr 1fr;
+
+    padding: 15px;
 
     gap: 10px;
 
-    padding: 15px;
 }
 
-.token {
-    width: 45px;
-    height: 45px;
+.piece {
+
+    width: 35px;
+
+    height: 35px;
 
     border-radius: 50%;
 
     border: 3px solid #111;
 
     margin: auto;
+
 }
 
-.red .token {
+.red-piece {
     background: #b91c1c;
 }
 
-.green .token {
+.green-piece {
     background: #15803d;
 }
 
-.yellow .token {
+.yellow-piece {
     background: #ca8a04;
 }
 
-.blue .token {
+.blue-piece {
     background: #1d4ed8;
 }
 
-/* Bagian tengah */
 
-.center {
+/* =========================
+   JALUR
+========================= */
+
+.path {
+
+    display: grid;
+
     background: white;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.top-path {
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    grid-template-rows:
+        repeat(2, 1fr);
+
+    border-bottom: 3px solid #111;
+
+}
+
+.bottom-path {
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    grid-template-rows:
+        repeat(2, 1fr);
+
+    border-top: 3px solid #111;
+
+}
+
+.left-path {
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    grid-template-rows:
+        repeat(3, 1fr);
+
+    border-right: 3px solid #111;
+
+}
+
+.right-path {
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    grid-template-rows:
+        repeat(3, 1fr);
+
+    border-left: 3px solid #111;
+
+}
+
+
+/* KOTAK JALAN */
+
+.path div {
+
+    border: 1px solid #777;
+
+}
+
+
+/* WARNA JALAN */
+
+.red-path {
+    background: #ef4444;
+}
+
+.green-path {
+    background: #22c55e;
+}
+
+.yellow-path {
+    background: #facc15;
+}
+
+.blue-path {
+    background: #3b82f6;
+}
+
+
+/* =========================
+   BAGIAN FINISH
+========================= */
+
+.finish {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr;
 
     border: 3px solid #111;
+
+    overflow: hidden;
+
 }
 
-.center-box {
-    width: 120px;
-    height: 120px;
-
-    background: linear-gradient(
-        45deg,
-        #ef4444 25%,
-        #22c55e 25%,
-        #22c55e 50%,
-        #3b82f6 50%,
-        #3b82f6 75%,
-        #facc15 75%
-    );
-
-    border: 5px solid #111;
-
-    transform: rotate(45deg);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.finish-red {
+    background: #ef4444;
 }
 
-.center-text {
-    transform: rotate(-45deg);
-
-    font-size: 40px;
+.finish-green {
+    background: #22c55e;
 }
 
-/* Kontrol */
+.finish-yellow {
+    background: #facc15;
+}
+
+.finish-blue {
+    background: #3b82f6;
+}
+
+.finish span {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 35px;
+
+}
+
+
+/* =========================
+   DADU
+========================= */
 
 .controls {
+
     margin-top: 20px;
+
 }
 
-.dice {
-    font-size: 60px;
+#dice {
+
+    font-size: 65px;
 
     margin-bottom: 10px;
+
 }
 
 button {
+
     border: none;
 
-    padding: 14px 25px;
-
     background: #facc15;
+
+    padding: 15px 25px;
 
     border-radius: 10px;
 
@@ -184,44 +332,70 @@ button {
     font-weight: bold;
 
     cursor: pointer;
+
 }
 
 button:hover {
+
     transform: scale(1.05);
+
 }
 
-.info {
+#turn {
+
     color: white;
 
-    margin-top: 10px;
+    margin-top: 12px;
 
-    font-size: 18px;
+    font-size: 20px;
+
 }
 
-/* Tampilan HP */
+
+/* =========================
+   HP
+========================= */
 
 @media (max-width: 650px) {
 
-    .board {
+    .ludo-board {
+
         width: 90vw;
+
         height: 90vw;
+
     }
 
-    .tokens {
-        width: 25vw;
-        height: 25vw;
+    .pieces {
+
+        width: 20vw;
+
+        height: 20vw;
 
         padding: 5px;
+
         gap: 3px;
+
     }
 
-    .token {
-        width: 8vw;
-        height: 8vw;
+    .piece {
+
+        width: 6vw;
+
+        height: 6vw;
+
     }
 
-    .title {
+    .house-title {
+
         font-size: 25px;
+
+    }
+
+    h1 {
+
+        font-size: 25px;
+
     }
 
 }
