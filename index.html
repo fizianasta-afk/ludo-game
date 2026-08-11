@@ -2,101 +2,189 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
 
     <title>Ludo Game</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
     <div class="game">
 
-        <h1 class="title">
-            🎲 LUDO GAME
-        </h1>
+        <h1>🎲 LUDO GAME</h1>
 
-        <div class="board">
+        <div class="ludo-board">
 
-            <!-- MERAH -->
+            <!-- RUMAH MERAH -->
+            <div class="house red-house">
+                <div class="house-title">🔴</div>
 
-            <div class="home red">
+                <div class="pieces">
+                    <div class="piece red-piece"></div>
+                    <div class="piece red-piece"></div>
+                    <div class="piece red-piece"></div>
+                    <div class="piece red-piece"></div>
+                </div>
+            </div>
 
-                <div class="tokens">
 
-                    <div class="token"></div>
-                    <div class="token"></div>
-                    <div class="token"></div>
-                    <div class="token"></div>
+            <!-- JALUR ATAS -->
+            <div class="path top-path">
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="green-path"></div>
+                <div class="green-path"></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="green-path"></div>
+                <div class="green-path"></div>
+                <div></div>
+
+            </div>
+
+
+            <!-- RUMAH HIJAU -->
+            <div class="house green-house">
+
+                <div class="house-title">🟢</div>
+
+                <div class="pieces">
+
+                    <div class="piece green-piece"></div>
+                    <div class="piece green-piece"></div>
+                    <div class="piece green-piece"></div>
+                    <div class="piece green-piece"></div>
 
                 </div>
 
             </div>
 
 
-            <!-- HIJAU -->
+            <!-- JALUR KIRI -->
 
-            <div class="home green">
+            <div class="path left-path">
 
-                <div class="tokens">
+                <div></div>
+                <div></div>
+                <div class="red-path"></div>
+                <div></div>
+                <div></div>
 
-                    <div class="token"></div>
-                    <div class="token"></div>
-                    <div class="token"></div>
-                    <div class="token"></div>
+                <div></div>
+                <div></div>
+                <div class="red-path"></div>
+                <div></div>
+                <div></div>
 
-                </div>
+                <div></div>
+                <div></div>
+                <div class="red-path"></div>
+                <div></div>
+                <div></div>
 
             </div>
 
 
             <!-- TENGAH -->
 
-            <div class="center">
+            <div class="finish">
 
-                <div class="center-box">
+                <div class="finish-red"></div>
+                <div class="finish-green"></div>
+                <div class="finish-yellow"></div>
+                <div class="finish-blue"></div>
 
-                    <div class="center-text">
-                        🏆
-                    </div>
+                <span>🏆</span>
+
+            </div>
+
+
+            <!-- JALUR KANAN -->
+
+            <div class="path right-path">
+
+                <div></div>
+                <div></div>
+                <div class="yellow-path"></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div class="yellow-path"></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div class="yellow-path"></div>
+                <div></div>
+                <div></div>
+
+            </div>
+
+
+            <!-- RUMAH BIRU -->
+
+            <div class="house blue-house">
+
+                <div class="house-title">🔵</div>
+
+                <div class="pieces">
+
+                    <div class="piece blue-piece"></div>
+                    <div class="piece blue-piece"></div>
+                    <div class="piece blue-piece"></div>
+                    <div class="piece blue-piece"></div>
 
                 </div>
 
             </div>
 
 
-            <!-- KUNING -->
+            <!-- JALUR BAWAH -->
 
-            <div class="home yellow">
+            <div class="path bottom-path">
 
-                <div class="tokens">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="blue-path"></div>
+                <div class="blue-path"></div>
+                <div></div>
 
-                    <div class="token"></div>
-                    <div class="token"></div>
-                    <div class="token"></div>
-                    <div class="token"></div>
-
-                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="blue-path"></div>
+                <div class="blue-path"></div>
+                <div></div>
 
             </div>
 
 
-            <!-- BIRU -->
+            <!-- RUMAH KUNING -->
 
-            <div class="home blue">
+            <div class="house yellow-house">
 
-                <div class="tokens">
+                <div class="house-title">🟡</div>
 
-                    <div class="token"></div>
-                    <div class="token"></div>
-                    <div class="token"></div>
-                    <div class="token"></div>
+                <div class="pieces">
+
+                    <div class="piece yellow-piece"></div>
+                    <div class="piece yellow-piece"></div>
+                    <div class="piece yellow-piece"></div>
+                    <div class="piece yellow-piece"></div>
 
                 </div>
 
@@ -109,21 +197,24 @@
 
         <div class="controls">
 
-            <div class="dice">
+            <div id="dice">
                 🎲
             </div>
 
-            <button>
+            <button onclick="rollDice()">
                 LEMPAR DADU
             </button>
 
-            <p class="info">
-                Giliran pemain 🔴
+            <p id="turn">
+                Giliran 🔴
             </p>
 
         </div>
 
     </div>
+
+
+    <script src="script.js"></script>
 
 </body>
 
