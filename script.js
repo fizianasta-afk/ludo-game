@@ -1,147 +1,56 @@
-// ==============================
-// PEMAIN
-// ==============================
+let position = 0;
 
-const players = [
-    {
-        name: "Merah",
-        icon: "🔴",
-        piece: "red1"
-    },
-
-    {
-        name: "Hijau",
-        icon: "🟢",
-        piece: "green1"
-    },
-
-    {
-        name: "Kuning",
-        icon: "🟡",
-        piece: "yellow1"
-    },
-
-    {
-        name: "Biru",
-        icon: "🔵",
-        piece: "blue1"
-    }
+const cells = [
+    "cell1",
+    "cell2",
+    "cell3",
+    "cell4",
+    "cell5",
+    "cell6",
+    "cell7",
+    "cell8",
+    "cell9",
+    "cell10",
+    "cell11",
+    "cell12"
 ];
 
 
-// ==============================
-// DATA GAME
-// ==============================
-
-let currentPlayer = 0;
-
-let diceNumber = 0;
-
-let position = 0;
-
-
-// ==============================
-// LEMPAR DADU
-// ==============================
-
 function rollDice() {
 
-    diceNumber =
+    // Membuat angka 1 sampai 6
+
+    const dice =
         Math.floor(Math.random() * 6) + 1;
 
 
-    // Tampilkan angka dadu
+    // Tampilkan dadu
 
     document.getElementById("dice")
-        .textContent = diceNumber;
+        .textContent = dice;
 
 
-    // Tampilkan pesan
+    // Tambahkan posisi
 
-    document.getElementById("message")
-        .textContent =
-        players[currentPlayer].icon +
-        " mendapatkan angka " +
-        diceNumber;
+    position = position + dice;
 
 
-    // Ambil bidak pemain
+    // Kalau melewati kotak terakhir
 
-    const piece =
-        document.getElementById(
-            players[currentPlayer].piece
-        );
+    if (position > cells.length) {
 
-
-    // Efek bidak
-
-    piece.classList.add("moving");
-
-
-    // Gerakkan bidak setelah sebentar
-
-    setTimeout(function () {
-
-        movePiece(
-            players[currentPlayer].piece,
-            diceNumber
-        );
-
-    }, 500);
-
-}
-
-
-// ==============================
-// GERAK BIDAK
-// ==============================
-
-function movePiece(pieceId, steps) {
-
-    position += steps;
-
-
-    // Membatasi posisi sementara
-
-    if (position > 12) {
-
-        position = 12;
+        position = cells.length;
 
     }
 
 
-    // Daftar kotak
-
-    const cells = [
-
-        "cell1",
-        "cell2",
-        "cell3",
-        "cell4",
-        "cell5",
-        "cell6",
-        "cell7",
-        "cell8",
-        "cell9",
-        "cell10",
-        "cell11",
-        "cell12"
-
-    ];
-
-
-    // Bidak
+    // Ambil bidak
 
     const piece =
-        document.getElementById(pieceId);
+        document.getElementById("redPiece");
 
 
-    // Hilangkan efek
-
-    piece.classList.remove("moving");
-
-
-    // Ambil kotak
+    // Ambil kotak tujuan
 
     const target =
         document.getElementById(
@@ -151,40 +60,14 @@ function movePiece(pieceId, steps) {
 
     // Pindahkan bidak
 
-    if (target) {
-
-        target.appendChild(piece);
-
-    }
+    target.appendChild(piece);
 
 
-    // Ganti pemain
+    // Tampilkan pesan
 
-    setTimeout(nextPlayer, 1000);
-
-}
-
-
-// ==============================
-// GANTI PEMAIN
-// ==============================
-
-function nextPlayer() {
-
-    currentPlayer++;
-
-    if (currentPlayer >= players.length) {
-
-        currentPlayer = 0;
-
-    }
-
-
-    document.getElementById("turn")
+    document.getElementById("message")
         .textContent =
-        "Giliran " +
-        players[currentPlayer].icon +
-        " " +
-        players[currentPlayer].name;
-
+        "🔴 Bidak bergerak " +
+        dice +
+        " langkah!";
 }
