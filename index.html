@@ -18,224 +18,54 @@
 
         <h1>🎲 LUDO GAME</h1>
 
-        <div class="ludo-board">
+        <div class="board">
 
-            <!-- RUMAH MERAH -->
-            <div class="house red-house">
+            <!-- JALUR -->
+            <div class="path">
 
-                <div class="house-title">
-                    🔴 MERAH
-                </div>
+                <div class="cell" id="cell1"></div>
+                <div class="cell" id="cell2"></div>
+                <div class="cell" id="cell3"></div>
+                <div class="cell" id="cell4"></div>
+                <div class="cell" id="cell5"></div>
+                <div class="cell" id="cell6"></div>
 
-                <div class="pieces">
-
-                    <div class="piece red-piece"
-                        id="red1"></div>
-
-                    <div class="piece red-piece"
-                        id="red2"></div>
-
-                    <div class="piece red-piece"
-                        id="red3"></div>
-
-                    <div class="piece red-piece"
-                        id="red4"></div>
-
-                </div>
+                <div class="cell" id="cell7"></div>
+                <div class="cell" id="cell8"></div>
+                <div class="cell" id="cell9"></div>
+                <div class="cell" id="cell10"></div>
+                <div class="cell" id="cell11"></div>
+                <div class="cell" id="cell12"></div>
 
             </div>
 
 
-            <!-- JALUR ATAS -->
+            <!-- BIDAK MERAH -->
 
-            <div class="path top-path">
+            <div class="red-home">
 
-                <div id="cell1"></div>
-                <div id="cell2"></div>
-                <div id="cell3"></div>
-                <div id="cell4"></div>
-                <div id="cell5"></div>
-                <div id="cell6"></div>
+                <h2>🔴</h2>
 
-                <div id="cell7"></div>
-                <div id="cell8"></div>
-                <div id="cell9"></div>
-                <div id="cell10"></div>
-                <div id="cell11"></div>
-                <div id="cell12"></div>
-
-            </div>
-
-
-            <!-- RUMAH HIJAU -->
-
-            <div class="house green-house">
-
-                <div class="house-title">
-                    🟢 HIJAU
+                <div
+                    class="piece red-piece"
+                    id="redPiece">
                 </div>
-
-                <div class="pieces">
-
-                    <div class="piece green-piece"
-                        id="green1"></div>
-
-                    <div class="piece green-piece"
-                        id="green2"></div>
-
-                    <div class="piece green-piece"
-                        id="green3"></div>
-
-                    <div class="piece green-piece"
-                        id="green4"></div>
-
-                </div>
-
-            </div>
-
-
-            <!-- JALUR KIRI -->
-
-            <div class="path left-path">
-
-                <div id="cell13"></div>
-                <div id="cell14"></div>
-                <div id="cell15"></div>
-                <div id="cell16"></div>
-                <div id="cell17"></div>
-
-                <div id="cell18"></div>
-                <div id="cell19"></div>
-                <div id="cell20"></div>
-                <div id="cell21"></div>
-                <div id="cell22"></div>
-
-                <div id="cell23"></div>
-                <div id="cell24"></div>
-                <div id="cell25"></div>
-                <div id="cell26"></div>
-                <div id="cell27"></div>
 
             </div>
 
 
             <!-- TENGAH -->
 
-            <div class="finish">
+            <div class="center">
 
-                <div class="finish-red"></div>
-                <div class="finish-green"></div>
-                <div class="finish-yellow"></div>
-                <div class="finish-blue"></div>
-
-                <span>🏆</span>
-
-            </div>
-
-
-            <!-- JALUR KANAN -->
-
-            <div class="path right-path">
-
-                <div id="cell28"></div>
-                <div id="cell29"></div>
-                <div id="cell30"></div>
-                <div id="cell31"></div>
-                <div id="cell32"></div>
-
-                <div id="cell33"></div>
-                <div id="cell34"></div>
-                <div id="cell35"></div>
-                <div id="cell36"></div>
-                <div id="cell37"></div>
-
-                <div id="cell38"></div>
-                <div id="cell39"></div>
-                <div id="cell40"></div>
-                <div id="cell41"></div>
-                <div id="cell42"></div>
-
-            </div>
-
-
-            <!-- RUMAH KUNING -->
-
-            <div class="house yellow-house">
-
-                <div class="house-title">
-                    🟡 KUNING
-                </div>
-
-                <div class="pieces">
-
-                    <div class="piece yellow-piece"
-                        id="yellow1"></div>
-
-                    <div class="piece yellow-piece"
-                        id="yellow2"></div>
-
-                    <div class="piece yellow-piece"
-                        id="yellow3"></div>
-
-                    <div class="piece yellow-piece"
-                        id="yellow4"></div>
-
-                </div>
-
-            </div>
-
-
-            <!-- JALUR BAWAH -->
-
-            <div class="path bottom-path">
-
-                <div id="cell43"></div>
-                <div id="cell44"></div>
-                <div id="cell45"></div>
-                <div id="cell46"></div>
-                <div id="cell47"></div>
-                <div id="cell48"></div>
-
-                <div id="cell49"></div>
-                <div id="cell50"></div>
-                <div id="cell51"></div>
-                <div id="cell52"></div>
-                <div id="cell53"></div>
-                <div id="cell54"></div>
-
-            </div>
-
-
-            <!-- RUMAH BIRU -->
-
-            <div class="house blue-house">
-
-                <div class="house-title">
-                    🔵 BIRU
-                </div>
-
-                <div class="pieces">
-
-                    <div class="piece blue-piece"
-                        id="blue1"></div>
-
-                    <div class="piece blue-piece"
-                        id="blue2"></div>
-
-                    <div class="piece blue-piece"
-                        id="blue3"></div>
-
-                    <div class="piece blue-piece"
-                        id="blue4"></div>
-
-                </div>
+                🏆
 
             </div>
 
         </div>
 
 
-        <!-- KONTROL -->
+        <!-- DADU -->
 
         <div class="controls">
 
@@ -247,12 +77,8 @@
                 LEMPAR DADU
             </button>
 
-            <p id="turn">
-                Giliran 🔴 Merah
-            </p>
-
             <p id="message">
-                Lempar dadu untuk bermain
+                Giliran 🔴 Merah
             </p>
 
         </div>
