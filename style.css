@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #222;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.game {
+    text-align: center;
+}
+
+.title {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.board {
+    width: 600px;
+    height: 600px;
+
+    background: white;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    border: 8px solid #111;
+}
+
+/* Rumah pemain */
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid #111;
+
+    position: relative;
+}
+
+.red {
+    background: #ef4444;
+}
+
+.green {
+    background: #22c55e;
+}
+
+.yellow {
+    background: #facc15;
+}
+
+.blue {
+    background: #3b82f6;
+}
+
+/* Lingkaran tempat bidak */
+
+.tokens {
+    width: 150px;
+    height: 150px;
+
+    background: white;
+
+    border: 5px solid #111;
+
+    border-radius: 20px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 10px;
+
+    padding: 15px;
+}
+
+.token {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 3px solid #111;
+
+    margin: auto;
+}
+
+.red .token {
+    background: #b91c1c;
+}
+
+.green .token {
+    background: #15803d;
+}
+
+.yellow .token {
+    background: #ca8a04;
+}
+
+.blue .token {
+    background: #1d4ed8;
+}
+
+/* Bagian tengah */
+
+.center {
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid #111;
+}
+
+.center-box {
+    width: 120px;
+    height: 120px;
+
+    background: linear-gradient(
+        45deg,
+        #ef4444 25%,
+        #22c55e 25%,
+        #22c55e 50%,
+        #3b82f6 50%,
+        #3b82f6 75%,
+        #facc15 75%
+    );
+
+    border: 5px solid #111;
+
+    transform: rotate(45deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-text {
+    transform: rotate(-45deg);
+
+    font-size: 40px;
+}
+
+/* Kontrol */
+
+.controls {
+    margin-top: 20px;
+}
+
+.dice {
+    font-size: 60px;
+
+    margin-bottom: 10px;
+}
+
+button {
+    border: none;
+
+    padding: 14px 25px;
+
+    background: #facc15;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.info {
+    color: white;
+
+    margin-top: 10px;
+
+    font-size: 18px;
+}
+
+/* Tampilan HP */
+
+@media (max-width: 650px) {
+
+    .board {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .tokens {
+        width: 25vw;
+        height: 25vw;
+
+        padding: 5px;
+        gap: 3px;
+    }
+
+    .token {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .title {
+        font-size: 25px;
+    }
+
+}
